@@ -1,5 +1,8 @@
 package com.dong.function
 
+import com.dong.kotlin.Util
+
+
 /**
  *
  * Created by zengwendong on 2017/5/22.
@@ -23,9 +26,11 @@ fun main(args: Array<String>) {
     //cat.fly("波斯猫","猫头鹰")
     //cat.fly(addr = "喜马拉雅山")
 
+    val util = Util()
     //简化方法。。
-    println("生了${cat.add(5)}只猫")
+    println("生了${util.add(5)}只猫")
 
-
+    val arr = arrayOf(Cat("白猫"), Cat("黑猫"))
+    util.addCats(Cat("大猫"), *arr, Cat("小猫"), name = "猫头鹰")
 
 }

@@ -4,7 +4,15 @@ package com.dong.function
  *
  * Created by zengwendong on 2017/5/26.
  */
-class Cat : Animal() {
+class Cat(name: String = "Hello Kitty") : Animal() {
+
+    private val catName: String
+
+    init {
+        this.catName = name
+    }
+
+    fun getName():String = this.catName
 
     /**
      * 简单声明方法,默认无返回值,它的类型是Unit,可省略
@@ -32,11 +40,6 @@ class Cat : Animal() {
         println("$catName 变身 $changeName 从 $addr 飞下")
         println("------------------------------------")
     }
-
-    /**
-     * 当方法返回单个表达式时,可以简写
-     */
-    fun add(num:Int) = num + 5
 
 }
 
