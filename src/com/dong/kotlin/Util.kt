@@ -1,5 +1,6 @@
 package com.dong.kotlin
 
+import com.dong.function.Animal
 import com.dong.function.Cat
 
 /**
@@ -24,6 +25,56 @@ class Util {
         println()
         println("---------------------------------")
         return list
+    }
+
+    /**
+     * 中缀标记法
+     */
+    infix fun move(num: Int){
+        println("移动了 $num 步")
+        println("---------------------------------")
+    }
+
+    /**
+     * 局部函数
+     */
+    fun exec(name: String) {
+        println("exec $name")
+        println("---------------------------------")
+
+        fun look(anim:String) {
+            println("look $anim")
+            move(5)
+            println("---------------------------------")
+        }
+        look("猫头鹰")
+    }
+
+    /**
+     * 扩展函数
+     */
+    fun execJump(anim:Animal){
+        anim.jump()
+    }
+
+    /**
+     * 尾递归函数
+     */
+    tailrec fun plus(start: Int, end: Int, result: Int): Int = if (start >= end) result else plus(start+1, end, start + result)
+
+    /**
+     * 尾递归函数优化后
+     */
+    fun plus2(start: Int, end: Int, result: Int): Int {
+        var res = result
+        var sta = start
+
+        while (sta < end) {
+            res += sta
+            sta++
+        }
+
+        return res
     }
 
 }
