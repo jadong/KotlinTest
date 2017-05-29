@@ -29,7 +29,6 @@ class Other{
     }
 
     fun main(args: Array<String>) {
-        println(test(10, 9, ::sumSom))
-        //println(test(10, 9) { start, end, result -> sumSom(start, end, result) })
+        println(test(10, 9) { start, end, result -> sumSom(start, end, result) })
     }
 }
