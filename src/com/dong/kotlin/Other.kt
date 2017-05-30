@@ -28,7 +28,9 @@ class Other{
         return res
     }
 
-    fun main(args: Array<String>) {
-        println(test(10, 9) { start, end, result -> sumSom(start, end, result) })
-    }
+}
+
+fun main(args: Array<String>) {
+    val other = Other()
+    println(other.test(10, 9) { start, end, result -> other.sumSom(start, end, result) })
 }

@@ -4,15 +4,14 @@ package com.dong.function
  *
  * Created by zengwendong on 2017/5/26.
  */
-class Cat(name: String = "Hello Kitty") : Animal() {
+class Cat(name: String = "Hello Kitty",color:String = "灰色") : Animal() {
 
-    private val catName: String
-
-    init {
-        this.catName = name
-    }
+    private val catName: String = name
+    private val color:String = color
 
     fun getName():String = this.catName
+
+    fun getColor():String = this.color
 
     /**
      * 简单声明方法,默认无返回值,它的类型是Unit,可省略
@@ -51,6 +50,21 @@ class Cat(name: String = "Hello Kitty") : Animal() {
     fun sing(){
         println("唱了一首离歌")
     }
+
+    //componentN()函数需要标记为 operator , 才可以在解构声明中使用
+    //componentN()函数的返回值类型必须与属性类型一致
+    operator fun component1(): String {
+        return this.catName
+    }
+
+    operator fun  component2(): String {
+        return this.color
+    }
+
+    override fun toString(): String {
+        return "Cat(catName='$catName', color='$color')"
+    }
+
 
 }
 

@@ -17,11 +17,11 @@ public class JavaDemo {
     }
 
     public void function(String name,String sex){
-        System.out.printf("name--%s,sex--%s",name,sex);
+        //System.out.printf("name--%s,sex--%s",name,sex);
     }
 
 
-    public List<String> addList(String ...args){
+    /*public List<String> addList(String ...args){
         List<String> list = new ArrayList<>();
         if (args != null) {
             for (int i = 0; i < args.length; i++) {
@@ -29,6 +29,6 @@ public class JavaDemo {
             }
         }
         return list;
-    }
+    }*/
 
 }
